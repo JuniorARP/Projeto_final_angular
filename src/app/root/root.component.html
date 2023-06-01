@@ -1,36 +1,40 @@
 <div *ngIf="!auth.user" class="container">
-  <form>
-    <fieldset>
-      <legend>Login to doidão</legend>
-      <div class="mb-3">Email</div>
-      <input
-        type="text"
-        name="email"
-        [(ngModel)]="email"
-        class="form-control"
-        placeholder="Coloque seu email aqui"
-      />
-      <div class="mb-3">Senha</div>
-      <input
-        type="password"
-        name="password"
-        [(ngModel)]="password"
-        class="form-control"
-        placeholder="Coloque sua senha aqui"
-      />
-      <hr />
-      <button
-        (click)="auth.emailSignin(this.email, this.password)"
-        class="btn btn-primary"
-      >
-        Login with e-mail
-      </button>
-      |
-      <button (click)="auth.googleSignin()" class="btn btn-primary">
-        Login with Google
-      </button>
-    </fieldset>
-  </form>
+  <div class="row align-items-center">
+    <div class="col-md-10 mx-auto col-lg-5" >
+      <form class="p-4 pmd-5 border rounded-3 bg-light">
+        <fieldset>
+          <legend>Login</legend>
+          <div class="mb-3">Email</div>
+          <input
+            type="text"
+            name="email"
+            [(ngModel)]="email"
+            class="form-control"
+            placeholder="Coloque seu email aqui"
+          />
+          <div class="mb-3">Senha</div>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            class="form-control"
+            placeholder="Coloque sua senha aqui"
+          />
+          <hr />
+          <button
+            (click)="auth.emailSignin(this.email, this.password)"
+            class="btn btn-primary"
+          >
+            Login with e-mail
+          </button>
+          |
+          <button (click)="auth.googleSignin()" class="btn btn-primary">
+            Login with Google
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 </div>
 
 <div *ngIf="auth.error" style="color: red" class="container">
