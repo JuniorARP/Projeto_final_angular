@@ -1,10 +1,10 @@
 <div *ngIf="!auth.user" class="container">
   <div class="row align-items-center">
-    <div class="col-md-10 mx-auto col-lg-5" >
+    <div class="col-md-10 mx-auto col-lg-5">
       <form class="p-4 pmd-5 border rounded-3 bg-light">
-        <fieldset>
-          <legend>Login</legend>
-          <div class="mb-3">Email</div>
+        <legend>Login</legend>
+        <div class="form-floating mb-3">
+          <label class="mb-3">Email</label>
           <input
             type="text"
             name="email"
@@ -12,7 +12,9 @@
             class="form-control"
             placeholder="Coloque seu email aqui"
           />
-          <div class="mb-3">Senha</div>
+        </div>
+        <div class="form-floating mb-3">
+          <label class="mb-3">Senha</label>
           <input
             type="password"
             name="password"
@@ -20,18 +22,18 @@
             class="form-control"
             placeholder="Coloque sua senha aqui"
           />
-          <hr />
-          <button
-            (click)="auth.emailSignin(this.email, this.password)"
-            class="btn btn-primary"
-          >
-            Login with e-mail
-          </button>
-          |
-          <button (click)="auth.googleSignin()" class="btn btn-primary">
-            Login with Google
-          </button>
-        </fieldset>
+        </div>
+        <hr />
+        <button
+          (click)="auth.emailSignin(this.email, this.password)"
+          class="btn btn-primary"
+        >
+          Login with e-mail
+        </button>
+        |
+        <button (click)="auth.googleSignin()" class="btn btn-primary">
+          Login with Google
+        </button>
       </form>
     </div>
   </div>
